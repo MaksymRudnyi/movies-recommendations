@@ -5,7 +5,7 @@ import { movies } from './stub';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Movie card',
+  title: 'Card/Movie card',
   component: MovieCard
 };
 
