@@ -1,0 +1,23 @@
+type Query {
+  movies: Movies
+}
+
+type Movies {
+    page: Int!
+    totalResults: Int!
+    totalPage: Int!
+    results: [Movie!]!
+}
+
+type Movie {
+    id: ID!
+    title: String!
+    releaseDate: String!
+    posterPath: String
+    genres: [Genre]
+}
+
+type Genre {
+    id: Int!
+    name: String
+}
