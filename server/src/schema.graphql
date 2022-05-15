@@ -5,7 +5,7 @@ type Query {
 type Movies {
     page: Int!
     totalResults: Int!
-    totalPage: Int!
+    totalPages: Int!
     results: [Movie!]!
 }
 
