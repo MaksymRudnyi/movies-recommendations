@@ -1,5 +1,5 @@
 type Query {
-  movies: Movies
+  movies(page: Int): Movies
 }
 
 type Movies {
