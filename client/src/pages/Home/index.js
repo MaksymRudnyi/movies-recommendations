@@ -2,8 +2,10 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import { useQuery } from "@apollo/client";
 
 import { MovieCard } from '../../components'
+import { MOVIES_QUERY } from './queries';
 
 const SelectedMovies = styled(Paper)(({ theme }) => ({
     backgroundColor: '#fff',
@@ -16,6 +18,12 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
   }));
 
 const Home = () => {
+    const {loading, error, data } = useQuery(MOVIES_QUERY);
+
+    if (error) {
+        return 'Error';
+    }
+
     return (
         <Box sx={{ flexGrow: 1, marginTop: 2 }}>
             <Grid container spacing={2}>
@@ -27,20 +35,16 @@ const Home = () => {
                 <Grid item xs={12} md={8}>
                     <Paper>
                         <Box sx={{ flexGrow: 1, padding: 1 }}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
-                                <MovieCard/>
-                            </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
-                                <MovieCard/>
-                            </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
-                                <MovieCard/>
-                            </Grid>
-                            <Grid item xs={12} md={4} lg={3}>
-                                <MovieCard/>
-                            </Grid>
-                        </Grid>
+                            {loading && 'Loading...'}
+                            {data && (
+                                <Grid container spacing={2}>
+                                    {data.movies.results.map((movie) => (
+                                        <Grid key={movie.id} item xs={12} sm={6} md={4} lg={3}>
+                                            <MovieCard movie={movie}/>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                            )}
                         </Box>
                     </Paper>
                 </Grid>
