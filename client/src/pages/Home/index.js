@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { useQuery } from "@apollo/client";
+import Pagination from '@mui/material/Pagination';
 
 import { MovieCard } from '../../components'
 import { MOVIES_QUERY } from './queries';
@@ -18,8 +20,12 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
   }));
 
 const Home = () => {
-    const {loading, error, data } = useQuery(MOVIES_QUERY);
+    const [page, setPage] = useState(1);
+    const {loading, error, data } = useQuery(MOVIES_QUERY, { variables: { page }});
 
+    const paginationHandler = (event, page) => {
+        setPage(page)
+    }
     if (error) {
         return 'Error';
     }
@@ -45,6 +51,11 @@ const Home = () => {
                                     ))}
                                 </Grid>
                             )}
+                        </Box>
+                        <Box mt={2} pb={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <Pagination count={data?.movies?.totalResults}
+                                page={page}
+                                onChange={paginationHandler}/>
                         </Box>
                     </Paper>
                 </Grid>
