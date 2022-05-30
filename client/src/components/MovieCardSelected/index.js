@@ -37,7 +37,7 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
                     </Typography>
                 </Box>
                 <CardMenu>
-                    <MenuItem onClick={onCardDelete}>
+                    <MenuItem onClick={() => onCardDelete(movie)}>
                         Delete
                     </MenuItem>
                 </CardMenu>
