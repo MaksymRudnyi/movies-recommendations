@@ -40,6 +40,8 @@ const Home = () => {
         return 'Error';
     }
 
+    const pagesCount = data?.movies?.totalPages <= 500 ? data?.movies?.totalPages : 500;
+
     return (
         <Box sx={{ flexGrow: 1, marginTop: 2 }}>
             <Grid container spacing={2}>
@@ -63,7 +65,7 @@ const Home = () => {
                             )}
                         </Box>
                         <Box mt={2} pb={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-                            <Pagination count={data?.movies?.totalResults}
+                            <Pagination count={pagesCount}
                                 page={page}
                                 onChange={paginationHandler}/>
                         </Box>
