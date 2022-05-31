@@ -20,7 +20,7 @@ const MovieCard = ({ movie, onCardSelect}) => {
     return (
         <Card sx={{ maxWidth: 250, position: "relative" }}>
             <CardMenu>
-                <MenuItem onClick={onCardSelect}>
+                <MenuItem onClick={() => onCardSelect(movie)}>
                     Select
                 </MenuItem>
             </CardMenu>
