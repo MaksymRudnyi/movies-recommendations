@@ -36,6 +36,7 @@ const CardMenu = ({ children }) => {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+                onClick={handleClose}
                 PaperProps={{
                     style: {
                         width: '20ch',
