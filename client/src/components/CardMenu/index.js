@@ -17,7 +17,7 @@ const CardMenu = ({ children }) => {
     return (
         <>
             <IconButton
-                sx={{ position: "absolute", right: 5, top: 5, background: 'rgba(255, 255, 255, .3)' }}
+                sx={{ position: "absolute", zIndex: 2, right: 5, top: 5, background: 'rgba(255, 255, 255, .3)' }}
                 aria-label="more"
                 id="long-button"
                 aria-controls={open ? 'long-menu' : undefined}
@@ -36,6 +36,7 @@ const CardMenu = ({ children }) => {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+                onClick={handleClose}
                 PaperProps={{
                     style: {
                         width: '20ch',
