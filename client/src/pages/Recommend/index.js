@@ -1,7 +1,7 @@
 const Recommend = () => {
     return (
         <>
-            Settings
+            I recommend
         </>
     )
 }
