@@ -1,5 +1,6 @@
 type Query {
   movies(page: Int): Movies
+  moviesByIds(ids: [Int]): [Movie]
 }
 
 type Movies {
