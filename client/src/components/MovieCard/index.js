@@ -36,14 +36,16 @@ const PlusIcon = styled(Box)(({ theme }) => ({
 }))
 
 
-const MovieCard = ({ movie, onCardSelect}) => {
+const MovieCard = ({ movie, onCardSelect, isPreviewMode }) => {
     return (
         <Card sx={{ maxWidth: 250, position: "relative" }}>
-            <CardMenu>
-                <MenuItem onClick={() => onCardSelect(movie)}>
-                    Select
-                </MenuItem>
-            </CardMenu>
+            {!isPreviewMode && (
+                <CardMenu>
+                    <MenuItem onClick={() => onCardSelect(movie)}>
+                        Select
+                    </MenuItem>
+                </CardMenu>
+            )}
             
             <Box sx={{ position: 'relative'}}>
                 <CardMedia
@@ -51,9 +53,11 @@ const MovieCard = ({ movie, onCardSelect}) => {
                     height="250"
                     image={movie.image}
                     alt={movie.title}/>
-                    <PlusIcon onClick={() => onCardSelect(movie)}>
-                        <AddBoxOutlinedIcon sx={{ fontSize: 80 }}/>
-                    </PlusIcon>
+                    {!isPreviewMode && (
+                        <PlusIcon onClick={() => onCardSelect(movie)}>
+                            <AddBoxOutlinedIcon sx={{ fontSize: 80 }}/>
+                        </PlusIcon>
+                    )}
             </Box>
 
             <CardInfo>
@@ -75,7 +79,9 @@ MovieCard.propTypes = {
         title: PropTypes.string.isRequired,
         releaseDate: PropTypes.string
     }).isRequired,
-    onCardSelect: PropTypes.func
+    onCardSelect: PropTypes.func,
+    isPreviewMode: PropTypes.bool
+    
 }
 
 export default MovieCard;
