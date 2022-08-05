@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import { FormattedMessage } from "react-intl";
 
 import CardMenu from '../CardMenu';
 
@@ -42,7 +43,7 @@ const MovieCard = ({ movie, onCardSelect, isPreviewMode }) => {
             {!isPreviewMode && (
                 <CardMenu>
                     <MenuItem onClick={() => onCardSelect(movie)}>
-                        Select
+                        <FormattedMessage id="select"/>
                     </MenuItem>
                 </CardMenu>
             )}
