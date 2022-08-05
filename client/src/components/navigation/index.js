@@ -17,8 +17,11 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Link as RouterLink } from "react-router-dom";
-import { AppContext } from '../../context/appContext';
+import {FormattedMessage} from "react-intl";
+
+import { AppContext } from '../../providers/appContext';
 import { LOCALES } from '../../const';
+import translate from '../../utils/translate';
 
 const Navigation = () => {
     const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -41,7 +44,7 @@ const Navigation = () => {
                         <ListItemIcon>
                             <SettingsIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Settings" />
+                        <ListItemText primary={translate('navigation.settings')} />
                     </ListItem>
                 </Link>
             </List>
@@ -67,11 +70,10 @@ const Navigation = () => {
 
                     <Link component={RouterLink} to="/" sx={{ flexGrow: 1 }}>
                         <Typography variant="h6" component="div" sx={{ color: "white", flexGrow: 1 }}>
-                            Movies recommendation
+                            <FormattedMessage id="navigation.home" />
                         </Typography>
                     </Link>
                     <Box>
-                        {state.locale}
                         <Button disabled={state.locale === LOCALES.ENGLISH}
                             sx={{ my: 2, color: 'white' }}
                             onClick={() => setLanguage(LOCALES.ENGLISH)}>
@@ -90,7 +92,7 @@ const Navigation = () => {
                             to='settings'
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
-                            Settings
+                            <FormattedMessage id="navigation.settings" />
                         </Button>
                     </Box>
                 </Toolbar>
