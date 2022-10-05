@@ -26,7 +26,7 @@ import I18nProvider from './providers/i18n'
 
 function App() {
   const { state } = useContext(AppContext);
-  const httpLink = new HttpLink({ uri: 'http://localhost:4000/' });
+  const httpLink = new HttpLink({ uri: 'http://localhost:4000/graphql' });
   const localeMiddleware = new ApolloLink((operation, forward) => {
     const customHeaders = operation.getContext().hasOwnProperty("headers") ? operation.getContext().headers : {};
   
