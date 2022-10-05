@@ -1,6 +1,6 @@
 {
     "name": "movies-recomendation",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Movies recomendation demo app: React + GraphQL.",
     "main": "./server/src/index.js",
     "scripts": {
