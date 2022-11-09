@@ -13,7 +13,14 @@ const getDetails = (id, language) => {
     return axios.get(`${API_BASE_URL}movie/${id}?api_key=${API_KEY}&language=${language}`);
 }
 
+const discoverMovie = async(filter, language) => {
+    const result = await axios.get(`${API_BASE_URL}discover/movie?api_key=${API_KEY}&language=${language}&page=${filter.page}&year=${filter.year}`);
+
+    return new Movies(result.data);
+}
+
 module.exports = {
     getPopular,
-    getDetails
+    getDetails,
+    discoverMovie
 }

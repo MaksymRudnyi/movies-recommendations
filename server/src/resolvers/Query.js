@@ -1,8 +1,9 @@
-const { getPopular, getDetails } = require('../modules/movies');
+const { getPopular, getDetails, discoverMovie } = require('../modules/movies');
 const { Movie } = require('../modules/movies/entities/Movie')
 
 async function movies(parent, args, { locale }) {
-    const data = await getPopular(args.page, locale);
+    console.log(args)
+    const data = await discoverMovie(args.filter, locale);
     return data;
 }
 

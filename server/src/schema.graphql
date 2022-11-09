@@ -1,6 +1,19 @@
 type Query {
-  movies(page: Int): Movies
+  movies(filter: MoviesFilterInput): Movies
   moviesByIds(ids: [Int]): [Movie]
+}
+
+input MoviesFilterInput {
+    page: Int,
+    sortBy: String,
+    sortDirection: SORT_DIRECTION,
+    includeAdult: Boolean
+    year: Int
+}
+
+enum SORT_DIRECTION {
+    desk,
+    ask
 }
 
 type Movies {
