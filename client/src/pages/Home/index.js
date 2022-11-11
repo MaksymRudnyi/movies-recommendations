@@ -25,8 +25,6 @@ const Home = () => {
     }
 
     const onSubmit=(data) => {
-        console.log(data);
-        debugger;
         setFilter(data);
     }
 
