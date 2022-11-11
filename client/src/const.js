@@ -14,10 +14,10 @@ export const SORT_OPTIONS = [
   { label: 'primary_release_date', value: 'primary_release_date'},
   { label: 'original_title', value: 'original_title'},
   { label: 'vote_average', value: 'vote_average'},
-  { label: 'vote_count'},
+  { label: 'vote_count', value: 'vote_count'},
 ];
 
 export const SORT_DIRECTION = {
-  DESK: 'desk',
-  ASK: 'ask'
+  DESC: 'desc',
+  ASC: 'asc'
 }

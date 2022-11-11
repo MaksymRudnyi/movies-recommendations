@@ -1,6 +1,7 @@
 type Query {
   movies(filter: MoviesFilterInput): Movies
   moviesByIds(ids: [Int]): [Movie]
+  genres: [Genre]
 }
 
 input MoviesFilterInput {
@@ -9,11 +10,13 @@ input MoviesFilterInput {
     sortDirection: SORT_DIRECTION,
     includeAdult: Boolean
     year: Int
+    primaryReleaseYear: Int
+    genre: Int
 }
 
 enum SORT_DIRECTION {
-    desk,
-    ask
+    desc,
+    asc
 }
 
 type Movies {

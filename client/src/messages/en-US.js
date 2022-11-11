@@ -17,6 +17,8 @@ export default {
       sort_direction: 'Sort direction',
       include_adult: 'Include adult',
       year: 'Year',
+      release_year: 'Release year',
+      genre: 'Genre',
       submit: 'Submit',
       sort: {
         'popularity': 'Popularity',
@@ -28,8 +30,8 @@ export default {
         'vote_count': 'Vote count'
       },
       sort_direction_options: {
-        ask: 'ASK',
-        desk: 'DESK'
+        asc: 'ASC',
+        desc: 'DESC'
       }
     }
   }

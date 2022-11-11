@@ -3,11 +3,15 @@ import { SortDirectionField } from './SortDirectionField';
 import { AdultField } from './AdultField';
 import { YearField } from './YearField';
 import { SubmitField } from './SubmitField';
+import { ReleaseYearField } from './ReleaseYearField';
+import { GenreField } from './GenreField';
 
 export { 
     SortField,
     SortDirectionField,
     AdultField,
     YearField,
-    SubmitField
+    SubmitField,
+    ReleaseYearField,
+    GenreField
 }

@@ -25,8 +25,8 @@ export const SortDirectionField = () => {
                           name="sort_directionp"
                           {...input}
                         >
-                          <FormControlLabel value={SORT_DIRECTION.ASK} control={<Radio />} label={<FormattedMessage id="filters.sort_direction_options.ask"></FormattedMessage>} />
-                          <FormControlLabel value={SORT_DIRECTION.DESK} control={<Radio />} label={<FormattedMessage id="filters.sort_direction_options.desk"></FormattedMessage>} />
+                          <FormControlLabel value={SORT_DIRECTION.ASC} control={<Radio />} label={<FormattedMessage id="filters.sort_direction_options.asc"></FormattedMessage>} />
+                          <FormControlLabel value={SORT_DIRECTION.DESC} control={<Radio />} label={<FormattedMessage id="filters.sort_direction_options.desc"></FormattedMessage>} />
                         
                         </RadioGroup>
                       </FormControl>
