@@ -1,0 +1,17 @@
+{
+    "name": "movies-recomendation",
+    "version": "1.0.1",
+    "description": "Movies recomendation demo app: React + GraphQL.",
+    "main": "./server/src/index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server/src/index.js",
+      "build": "cd client && npm run build",
+      "install": "cd client && npm install --legacy-peer-deps && cd ../server && npm install"
+    },
+    "author": "Maksym Rudnyi",
+    "license": "MIT",
+    "engines": {
+      "node": "16.x"
+    }
+  }
